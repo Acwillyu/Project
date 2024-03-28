@@ -5,7 +5,7 @@
   }
   
 
-$bodyBColor: linear-gradient(to bottom right, #669999 0%, #000066 100%);
+$bodyBColor: linear-gradient(to bottom right, #5a6969 0%, #07b1ff 100%);
 
 $headerBColor: #ffffff;
 
@@ -17,9 +17,7 @@ $footerBColor: #ffffff;
 
 $gameContainerWidth: 90%;
 $gameWindowWidth: 45%;
-
 $diceWindowWidth: 100%;
-
 $headerHeight: 80px;
 $diceWindowHeight: 150px;
 
@@ -63,7 +61,6 @@ html{
 
 body 
 {
-  font-family: merriweather-black;
   background: $bodyBColor;
   display: flex;
   flex-direction: column;
