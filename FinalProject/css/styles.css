@@ -1,0 +1,254 @@
+.merriweather-black {
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+html {
+  font-family: "Merriweather", serif;
+}
+
+body {
+  font-family: merriweather-black;
+  background: linear-gradient(to bottom right, #669999 0%, #000066 100%);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-attachment: fixed;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+  background-color: #ffffff;
+  margin-bottom: 30px;
+}
+header img {
+  width: 250px;
+  height: auto;
+}
+
+.game_container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.4);
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 1000px;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+}
+
+.game_displays {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.game_window {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  box-sizing: border-box;
+  margin: 3.3333333333% 0;
+  align-items: center;
+  height: calc(20px + diceWindow);
+  border-radius: 5px;
+}
+
+.dice_window {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 45%;
+  margin-bottom: 3.3333333333%;
+}
+
+.dice_image_container {
+  position: relative;
+  width: 45%;
+  height: 0;
+  padding-top: 45%;
+}
+
+.dice_image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: auto;
+}
+
+.message_window {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 45%;
+  height: 100px;
+  margin: 20px 0;
+}
+
+.button_window {
+  margin-bottom: 3.3333333333%;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 100%;
+}
+.button_window #rollButton {
+  background-color: rgb(224, 217, 230);
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 5px black;
+  padding: 5px;
+  width: 150px;
+  font-size: 1.2em;
+}
+.button_window #rollButton:active {
+  box-shadow: 0px 2px black;
+  transform: translateY(3px);
+}
+.button_window #rollButton:disabled {
+  background-color: gray;
+  color: black;
+  box-shadow: none;
+  transform: none;
+  box-shadow: 0px 5px black;
+}
+.button_window #newGameButton {
+  background-color: rgb(26, 231, 8);
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 5px black;
+  padding: 5px;
+  width: 150px;
+  font-size: 1.2em;
+}
+.button_window #newGameButton:active {
+  box-shadow: 0px 2px black;
+  transform: translateY(3px);
+}
+.button_window #newGameButton:disabled {
+  background-color: gray;
+  color: black;
+  box-shadow: none;
+  transform: none;
+  box-shadow: 0px 5px black;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#toggleRulesButton {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  font-size: 1em;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+#toggleRulesButton {
+  background-color: rgb(224, 217, 230);
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 5px black;
+  padding: 5px;
+  width: 150px;
+  font-size: 1.2em;
+}
+#toggleRulesButton:active {
+  box-shadow: 0px 2px black;
+  transform: translateY(3px);
+}
+#toggleRulesButton:disabled {
+  background-color: gray;
+  color: black;
+  box-shadow: none;
+  transform: none;
+  box-shadow: 0px 5px black;
+}
+
+#toggleRulesButton:hover {
+  background-color: #07bdf5;
+}
+
+.player_color {
+  background-color: #0ff1cc;
+}
+
+.computer_color {
+  background-color: #e08a0a;
+}
+
+#playerWindow {
+  background-color: #0ff1cc;
+}
+
+#computerWindow {
+  background-color: #e08a0a;
+}
+
+.rules_window {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 30px auto;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+}
+.rules_window h3 {
+  border-bottom: 2px solid black;
+}
+
+.winner {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: lime;
+}
+
+footer {
+  display: flex;
+  margin-top: auto;
+  background-color: #ffffff;
+  color: #ffffff;
+}
+footer .footer_items {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+footer a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  color: #2365e0;
+}

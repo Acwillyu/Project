@@ -1,0 +1,280 @@
+.merriweather-black {
+    font-family: "Merriweather", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+
+$bodyBColor: linear-gradient(to bottom right, #669999 0%, #000066 100%);
+
+$headerBColor: #ffffff;
+
+$gameContainerBColor: rgba(255, 255, 255, 0.4);
+$playerWindowBColor: #0ff1cc;
+$computerWindowBColor: #e08a0a;
+
+$footerBColor: #ffffff;
+
+$gameContainerWidth: 90%;
+$gameWindowWidth: 45%;
+
+$diceWindowWidth: 100%;
+
+$headerHeight: 80px;
+$diceWindowHeight: 150px;
+
+$marginBottom: calc(10% / 3);
+
+@mixin button-style($background_color, $text_color)
+ {
+  background-color: $background_color;
+  color: $text_color;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 5px black;
+  padding: 5px;
+  width: 150px;
+  font-size: 1.2em;
+
+  &:active 
+  {
+    box-shadow: 0px 2px black;
+    transform: translateY(3px);
+  }
+  &:disabled 
+  {
+    background-color: gray;
+    color: black;
+    box-shadow: none;
+    transform: none;
+    box-shadow: 0px 5px black;
+  }
+}
+
+@mixin border-style($border_color) 
+{
+  border: 2px solid $border_color;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px black;
+}
+html{
+    font-family: "Merriweather", serif;
+}
+
+body 
+{
+  font-family: merriweather-black;
+  background: $bodyBColor;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  background-attachment: fixed;
+  font-family: 'Roboto', sans-serif;
+}
+
+header
+ {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: $headerHeight;
+  background-color: $headerBColor;
+  margin-bottom: 30px;
+
+  img {
+    width: 250px;
+    height: auto;
+  }
+}
+
+.game_container 
+{
+  display: flex;
+  flex-direction: column;
+  width: $gameContainerWidth;
+  margin: auto;
+  background-color: $gameContainerBColor;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;;
+  max-width: 1000px;
+  @include border-style(black);
+}
+
+.game_displays
+ {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.game_window 
+{
+  display: flex;
+  flex-direction: column;
+  width: $gameWindowWidth;
+  box-sizing: border-box;
+  margin: $marginBottom 0;
+  align-items: center;
+  height: calc(20px + diceWindow);
+  border-radius: 5px;
+}
+
+.dice_window 
+{
+  display: flex;
+  justify-content: space-evenly;
+  width: $diceWindowWidth;
+  height: $gameWindowWidth;
+  margin-bottom: $marginBottom;
+}
+
+.dice_image_container 
+{
+  position: relative;
+  width: 45%;
+  height: 0;
+  padding-top: 45%;
+}
+
+.dice_image 
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%; 
+  height: auto;
+}
+
+.message_window 
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 45%;
+  height: 100px;
+  margin: 20px 0;
+}
+
+.button_window 
+{
+  margin-bottom: $marginBottom;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  width: 100%;
+
+  #rollButton {
+    @include button-style(rgb(224, 217, 230), black);
+  }
+
+  #newGameButton {
+    @include button-style(rgb(26, 231, 8), black);
+  }
+
+}
+  
+.buttons
+ {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#toggleRulesButton 
+{
+  display: block;      
+  margin: 0 auto;      
+  padding: 10px 20px;  
+  font-size: 1em;
+  margin-top: 20px;     
+  cursor: pointer;
+}
+
+#toggleRulesButton
+{
+  @include button-style(rgb(224, 217, 230), black);
+} 
+
+#toggleRulesButton:hover 
+  {
+    background-color: #07bdf5; 
+  }
+  
+
+.player_color 
+{
+  background-color: $playerWindowBColor;
+}
+
+.computer_color 
+{
+  background-color: $computerWindowBColor;
+}
+
+#playerWindow 
+{
+  background-color: $playerWindowBColor;
+}
+
+#computerWindow 
+{
+  background-color: $computerWindowBColor;
+}
+
+.rules_window 
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1000px;
+  margin: 30px auto;
+  width: $gameContainerWidth;
+  background-color: $gameContainerBColor;
+  box-sizing: border-box;
+  padding: 20px;
+  @include border-style(black);
+
+  h3 {
+    border-bottom: 2px solid black;
+  }
+}
+
+.winner 
+{
+  font-size: 2.5em;
+  font-weight: bold;
+  color: lime;
+}
+
+footer 
+{
+  display: flex;
+  margin-top: auto;
+  background-color: $footerBColor;
+  color: #ffffff;
+
+  .footer_items 
+  {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  a:hover {
+    color: #2365e0;
+  }
+}
+  

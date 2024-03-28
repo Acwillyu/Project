@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
+
+		<link type="text/css" rel="stylesheet" href="css/styles.css" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title id="title">Dice Game</title>
+		<script
+			src="https://code.jquery.com/jquery-3.7.1.min.js"
+			integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+			crossorigin="anonymous"
+		></script>
+		<script src="scripts/script.js"></script>
+	</head>
+
+	<body>
+		<header>
+			<h1>Dice Game!</h1>
+		</header>
+
+		<main>
+
+			<div class="game_container">
+				<div class="game_displays">
+					<div id="playerWindow" class="game_window">
+						<h2>Player</h2>
+						<div class="dice_window">
+							<div id="playerDice1" class="dice_image_container">
+								<img src="images/dice_blank.png" alt="Player's first dice" class="dice_image" id="playersDice1" />
+							</div>
+							<div id="playerDice2" class="dice_image_container">
+								<img src="images/dice_blank.png" alt="Player's second dice" class="dice_image" id="playersDice2" />
+							</div>
+						</div>
+					</div>
+					<div id="computerWindow" class="game_window">
+						<h2>Computer</h2>
+						<div class="dice_window">
+							<div id="computerDice1" class="dice_image_container">
+								<img src="images/dice_blank.png" alt="Computer's first dice" class="dice_image" id="computersDice1" />
+							</div>
+							<div id="computerDice2" class="dice_image_container">
+								<img src="images/dice_blank.png" alt="Computer's second dice" class="dice_image" id="computerDice2" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<h2 id="displayRound"></h2>
+				</div>
+
+                <div class="winner_info_display">
+                    <h2 id="winnerInfo"></h2>
+                  </div>
+                                   
+				<div class="button_window">
+					<div class="game_displays">
+						<div class="message_window" id="playerMessage">
+							<div class="score">
+								<h3>Player Score: <span id="playerScore">0</span></h3>
+							</div>
+
+							<div class="score">
+								<h3>Player Round Score: <span id="playerRoundScore">0</span></h3>
+							</div>
+						</div>
+
+						<div class="buttons">
+							<button id="rollButton">Roll</button>
+							<button id="newGameButton">New Game</button>
+						</div>
+
+						<div class="message_window" id="computerMessage">
+							<div class="score">
+								<h3>Computer Score: <span id="computerScore">0</span></h3>
+							</div>
+
+							<div class="score">
+								<h3>Computer Round Score: <span id="computerRoundScore">0</span></h3>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+            <button id="toggleRulesButton">Show/Hide Rules</button>
+
+            <div class="rules_window" id="rulesWindow" style="display: none;">    
+				<h2 id="rules">Rules: </h2>
+				<h3>Starting the game</h3>
+				<p>
+					To start the game, click the "ROLL" button. This will roll the dice for both the player and the computer. The
+					game is played in 3 rounds.
+				</p>
+				<h3>Playing the game</h3>
+				<p>In each round, the player and the computer will roll the dice.</p>
+				<p>After each roll the score will be calculated based off of the following rules:</p>
+				<ul>
+					<li>
+						Zero Score: If either of the dice shows a 1, the score of that round is zero. <br />
+						For example a roll of 6 and 1 scores 0
+					</li>
+					<li>
+						Double Score: If both dice show the same number, the score is double the total of te dice. However this
+						excludes 1 as it will result in a score of 0. <br />
+						For example a roll of 5 and 5 will score 20
+					</li>
+					<li>
+						Standard Score: For any other dice combination, the score is the some of the dice <br />
+						For example a roll of 3 and 2 scores 7
+					</li>
+				</ul>
+				<p>Repeat the following process for the 3 rounds of the game</p>
+				<h3>Determining the Winner</h3>
+				<p>
+					After each round, the player and the computer will have their scores updated. The player with the highest
+					score after 3 rounds is the winner.
+				</p>
+			</div>
+		</main>
+		<footer>
+			<div class="footer_items">
+				<a>COMP 2132</a>
+			</div>
+		</footer>
+	</body>
+</html>
